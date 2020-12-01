@@ -47,7 +47,7 @@ public class Employee {
     private String password;
 
     @Column(name = "admin_flag", nullable = false)
-    private Integer admin_dlag;
+    private Integer admin_flag;
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
@@ -90,12 +90,12 @@ public class Employee {
         this.password = password;
     }
 
-    public Integer getAdmin_dlag() {
-        return admin_dlag;
+    public Integer getAdmin_flag() {
+        return admin_flag;
     }
 
-    public void setAdmin_dlag(Integer admin_dlag) {
-        this.admin_dlag = admin_dlag;
+    public void setAdmin_flag(Integer admin_dlag) {
+        this.admin_flag = admin_dlag;
     }
 
     public Timestamp getCreated_at() {
