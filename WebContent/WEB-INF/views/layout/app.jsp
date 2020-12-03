@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
@@ -27,12 +26,12 @@
                     </div>
                 </c:if>
             </div>
-        </div>
-        <div id="content">
-            ${param.content}
-        </div>
-        <div id="footer">
-            by K.H
+            <div id="content">
+                ${param.content}
+            </div>
+            <div id="footer">
+                by K.H.
+            </div>
         </div>
     </body>
 </html>
