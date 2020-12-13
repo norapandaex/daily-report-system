@@ -28,6 +28,10 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "checkLoginCodeAndPassword",
             query = "SELECT e FROM Employee AS e WHERE e.delete_flag = 0 AND e.code = :code AND e.password = :pass"
+            ),   //:code,:passのところにサーブレットで指定した値が入る
+    @NamedQuery(
+            name = "getSearchNameEmployee",
+            query = "SELECT e FROM Employee AS e WHERE e.name LIKE :sname"
             )
 })
 @Entity

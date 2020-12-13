@@ -33,6 +33,7 @@ public class ReportNewServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("_token", request.getSession().getId());
 
+        //今日の日報を新規で登録する際、すでに今日の日付が入力欄に入っていた方が利用者にとって便利だから事前に本日の日付を取得して格納している
         Report r = new Report();
         r.setReport_date(new Date(System.currentTimeMillis()));
         request.setAttribute("report", r);

@@ -162,3 +162,7 @@ pre {
 h3 {
     font-size: larger;
 }
+
+#search_items{
+    font-weight: 900;
+}

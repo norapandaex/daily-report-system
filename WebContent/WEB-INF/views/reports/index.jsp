@@ -9,6 +9,22 @@
             </div>
         </c:if>
         <h2>日報 一覧</h2>
+
+        <form method="POST" action="<c:url value='/reports/search' />">
+            <label for="search_name">名前</label>&nbsp;
+            <input type="text" name="search_name" />
+
+            <label for="search_keyword">キーワード</label>&nbsp;
+            <input type="text" name="search_keyword" />&nbsp;
+
+            <label for="search_date">日付</label>&nbsp;
+            <input type="date" name="search_adate" />
+            〜
+            <input type="date" name="search_bdate" />
+
+            <button type="submit">検索</button>
+        </form>
+
         <table id="report_list">
             <tbody>
                 <tr>

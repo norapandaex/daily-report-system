@@ -58,6 +58,10 @@ public class ReportsIndexServlet extends HttpServlet {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
             request.getSession().removeAttribute("flush");
         }
+        if(request.getSession().getAttribute("search_flag") != null) {
+            request.setAttribute("search_flag", request.getSession().getAttribute("search_flag"));
+            request.getSession().removeAttribute("search_flag");
+        }
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/reports/index.jsp");
         rd.forward(request, response);

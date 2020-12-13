@@ -46,7 +46,9 @@
                 <h2>お探しのデータは見つかりませんでした。</h2>
             </c:otherwise>
         </c:choose>
-
+        <c:if test="${search_flag == 1}">
+            <p><a href="<c:url value='/reports/search' />">検索結果に戻る</a></p>
+        </c:if>
         <p><a href="<c:url value='/reports/index' />">一覧に戻る</a></p>
     </c:param>
 </c:import>

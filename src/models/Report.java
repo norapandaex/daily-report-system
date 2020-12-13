@@ -33,6 +33,126 @@ import javax.persistence.Table;
         @NamedQuery(
                 name = "getMyReportsCount",
                 query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :employee"
+                ),
+        @NamedQuery(
+                name = "getSearchName",
+                query = "SELECT r FROM Report AS r WHERE r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchKeyword",
+                query = "SELECT r FROM Report AS r WHERE r.content LIKE :skeyword OR r.title LIKE :skeyword ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchNameAndKeyword",
+                query = "SELECT r FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchDate",
+                query = "SELECT r FROM Report AS r WHERE r.report_date BETWEEN :adate AND :bdate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchNameAndDate",
+                query = "SELECT r FROM Report AS r WHERE r.report_date BETWEEN :adate AND :bdate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchKeywordAndDate",
+                query = "SELECT r FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date BETWEEN :adate AND :bdate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchAll",
+                query = "SELECT r FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date BETWEEN :adate AND :bdate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchAfterDate",
+                query = "SELECT r FROM Report AS r WHERE r.report_date >= :adate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchNameAndAfterDate",
+                query = "SELECT r FROM Report AS r WHERE r.report_date >= :adate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchKeywordAndAfterDate",
+                query = "SELECT r FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date >= :adate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchAllAfterDate",
+                query = "SELECT r FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date >= :adate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchBeforeDate",
+                query = "SELECT r FROM Report AS r WHERE r.report_date <= :bdate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchNameAndBeforeDate",
+                query = "SELECT r FROM Report AS r WHERE r.report_date <= :bdate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchKeywordAndBeforeDate",
+                query = "SELECT r FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date <= :bdate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchAllBeforeDate",
+                query = "SELECT r FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date <= :bdate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchNameCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchKeywordCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE r.content LIKE :skeyword OR r.title LIKE :skeyword ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE r.report_date BETWEEN :adate AND :bdate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchNameAndKeywordCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchNameAndDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE r.report_date BETWEEN :adate AND :bdate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchKeywordAndDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date BETWEEN :adate AND :bdate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchAllCount",
+                query = "SELECT Count(r) FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date BETWEEN :adate AND :bdate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchAfterDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE r.report_date >= :adate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchNameAndAfterDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE r.report_date >= :adate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchKeywordAndAfterDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date >= :adate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchAllAfterDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date >= :adate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchBeforeDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE r.report_date <= :bdate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchNameAndBeforeDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE r.report_date <= :bdate AND r.employee = :sname ORDER BY r.id DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchKeywordAndBeforeDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date <= :bdate ORDER BY r.report_date DESC"
+                ),
+        @NamedQuery(
+                name = "getSearchAllBeforeDateCount",
+                query = "SELECT COUNT(r) FROM Report AS r WHERE (r.content LIKE :skeyword OR r.title LIKE :skeyword) AND r.report_date <= :bdate AND r.employee = :sname ORDER BY r.id DESC"
                 )
 })
 @Entity
